@@ -1,0 +1,30 @@
+{
+  "name": "rollup-plugin-import-lithtml",
+  "version": "1.0.0",
+  "description": "A Rollup plugin to import lit-html from an external .html file",
+  "main": "index.js",
+  "keywords": [
+    "rollup-plugin",
+    "rollup",
+    "import",
+    "lit-html"
+  ],
+  "scripts": {
+    "test": "jest index.spec.js"
+  },
+  "files": [
+    "index.js",
+    "package.json"
+  ],
+  "author": {
+    "name": "Maurice Downes",
+    "url": "https://advancedfontends.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "rollup-pluginutils": "^2.8.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
