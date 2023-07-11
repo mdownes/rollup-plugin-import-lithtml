@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-import-lithtml",
-  "version": "1.0.0",
-  "description": "A Rollup plugin to import lit-html from an external .html file",
+  "version": "1.0.1",
+  "description": "A Rollup plugin to import lit-html from an external .html file, allowing the html to be separated from the JavaScript.",
   "main": "index.js",
   "keywords": [
     "rollup-plugin",
@@ -16,6 +16,10 @@
     "index.js",
     "package.json"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdownes/rollup-plugin-import-lithtml.git"
+  },
   "author": {
     "name": "Maurice Downes",
     "url": "https://advancedfontends.com"
@@ -26,5 +30,8 @@
   },
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }

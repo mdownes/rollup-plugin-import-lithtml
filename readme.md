@@ -1,5 +1,6 @@
-### rollup-plugin-concat
-A Rollup plugin to import lit-html from an external .html file. The plugin will automatically add all directive imports meaning the html file can just deal with the markup.
+### rollup-plugin-import-lithtml
+A Rollup plugin to import lit-html from an external .html file. This allows separation of the Javascript and HTML.
+The plugin will automatically add all directive imports meaning the html file can just deal with the markup.
 
 ### Install
 
