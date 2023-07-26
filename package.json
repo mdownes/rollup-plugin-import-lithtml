@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-import-lithtml",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Rollup plugin to import lit-html from an external .html file, allowing the html to be separated from the JavaScript.",
   "main": "index.js",
   "keywords": [
