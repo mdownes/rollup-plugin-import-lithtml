@@ -59,7 +59,7 @@ module.exports = function importLitHtml(options = {}) {
 
       const allDirectives = directives.length > 0 ? getDirectives({ directives, cache }) : getDirectives({ cache });
       const importStatements = allDirectives.map((d) => {
-        if (d.directiveFilePath) {
+        if (d.directiveFilePath && code.indexOf(`${d.directiveName}(`) > -1){
           return `import { ${d.directiveName} } from '${d.directiveFilePath}';`;
         }
         return null;
