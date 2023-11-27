@@ -21,7 +21,7 @@ describe('Rollup Plugin Test', () => {
 
   test('transform function should return transformed code', async () => {
     mockCreateFilterValue = true;
-   // const code = '<div>Hello, world!</div>';
+    const code = `<div></div>`;
     const id = 'example.html';
     const expectedTransformedCode = `\n\nimport { html } from 'lit'; export default function() { return html\`${code}\`; }`;
 
@@ -31,8 +31,21 @@ describe('Rollup Plugin Test', () => {
     expect(result.map).toEqual({ mappings: '' });
   });
 
+  test('transform function should return transformed code snf include nothing import', async () => {
+    mockCreateFilterValue = true;
+
+    const code = "<div>${user ? '<button>DELETE</button>' : nothing } </div>";
+
+    const id = 'example.html';
+    const expectedTransformedCode = `\n\nimport { html, nothing } from 'lit'; export default function() { return html\`${code}\`; }`;
+
+    const result = await importLitHtml({ cache: false }).transform(code, id);
+
+    expect(result.code).toBe(expectedTransformedCode);
+    expect(result.map).toEqual({ mappings: '' });
+  });
   test('transform function should return null if filter condition is not met', async () => {
-   // const code = '<div>Hello, world!</div>';
+    // const code = '<div>Hello, world!</div>';
     const id = 'example.js';
     mockCreateFilterValue = false;
     const result = await importLitHtml({ cache: false }).transform(code, id);

@@ -59,14 +59,15 @@ module.exports = function importLitHtml(options = {}) {
 
       const allDirectives = directives.length > 0 ? getDirectives({ directives, cache }) : getDirectives({ cache });
       const importStatements = allDirectives.map((d) => {
-        if (d.directiveFilePath && code.indexOf(`${d.directiveName}(`) > -1){
+        if (d.directiveFilePath && code.indexOf(`${d.directiveName}(`) > -1) {
           return `import { ${d.directiveName} } from '${d.directiveFilePath}';`;
         }
         return null;
       }).filter(Boolean).join('\n');
+      const nothing = code.indexOf('nothing') >= 0 ? ', nothing' : '';
 
       const importBlock = `${importStatements}\n\n`;
-      const transformedCode = importBlock + `import { html } from 'lit'; export default function() { return html\`${code}\`; }`;
+      const transformedCode = importBlock + `import { html${nothing} } from 'lit'; export default function() { return html\`${code}\`; }`;
 
       return {
         code: transformedCode,
